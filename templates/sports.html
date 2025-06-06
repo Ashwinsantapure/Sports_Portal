@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% load static %}
+ 
+{% block title %}GSMCOE Sports{% endblock %}
+{% block head %}
+<link rel="stylesheet" href="{% static "css/events.css" %}">
+{% endblock head %}
+{% block body %}
+
+<div class="container py-5">
+    <h1 class="text-center text-primary mb-4">Sports</h1>
+
+    <div class="row">
+        {% for sport in sports %}
+        <div class="col-12">
+            <div class="card sport-card">
+                <div class="card-body">
+                    <h4 class="card-title">{{ sport.name }}</h4>
+                    <p class="card-text">{{ sport.description }}</p>
+                    <p class="sport-date"><strong>Start Date:</strong> {{ sport.start_date }}</p>
+                    <p class="sport-date"><strong>End Date:</strong> {{ sport.end_date }}</p>
+
+                    <!-- "Go" Button -->
+                    <a href="{% url 'participant_register' sport.id %}" class="btn btn-primary mt-2">
+                        Register Now <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <div class="col-12 text-center">
+            <p class="alert alert-warning">No sports available.</p>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock body %}
+
+
+{% comment %} {% extends "base.html" %}
+
+{% block title %}GSMCOE Sports{% endblock %}
+{% block body %}
+
+<h1>Sports</h1>
+    <ul>
+        {% for sport in sports %}
+            <li>
+                <h2>{{ sport.name }}</h2>
+                <p>{{ sport.description }}</p>
+                <p>Start Date: {{ sport.start_date }}</p>
+                <p>End Date: {{ sport.end_date }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock body %}
+
+</body>
+</html> {% endcomment %}

@@ -1,0 +1,68 @@
+
+.event-card, .sport-card {
+    background: linear-gradient(rgb(0, 110, 255), white);
+    border-radius: 10px;
+    height: 300px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 10px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+h1{
+    padding: 5px;
+    text-align: center;
+    
+}
+
+.sport-card .card-text{
+    max-height: 70px;
+    overflow-y: auto;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+.card-text::-webkit-scrollbar {
+    width: 6px;
+}
+
+.card-text::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+/* Hover Effect */
+.event-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+.sport-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Event Links */
+.event-link {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+.event-link:hover {
+    color: #013e93;
+    text-decoration: underline;
+}
+
+/* Event Date Styling */
+.event-date {
+    font-size: 14px;
+    color: #222222;
+    margin-bottom: 5px;
+}
+
+/* Responsive Grid */
+@media (max-width: 768px) {
+    .event-card {
+        padding: 15px;
+    }
+}
